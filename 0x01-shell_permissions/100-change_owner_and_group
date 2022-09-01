@@ -1,2 +1,2 @@
 #!/bin/bash
-useradd vincent staff
+chown -h vincent:staff _hello
