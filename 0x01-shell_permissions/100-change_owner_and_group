@@ -1,2 +1,2 @@
 #!/bin/bash
-chown -h user:group file
+chown -h vincent:staff file
