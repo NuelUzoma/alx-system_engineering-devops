@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f -empty
+find ./ -type d f -empty
