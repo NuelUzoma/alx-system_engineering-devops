@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# Initialize variables
+hours=0
+
+# Use while loop to increment hours
+while [ $hours -lt 13 ]
+do
+  echo "Hour: $hours"
+  minutes=0
+  # Use while loop to increment minutes
+  while [ $minutes -lt 60 ]
+  do
+    echo $minutes
+    minutes=$((minutes+1))
+  done
+  hours=$((hours+1))
+done
