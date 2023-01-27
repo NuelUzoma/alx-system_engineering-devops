@@ -1,0 +1,12 @@
+total 16
+-rw-r--r-- 1 emmanuel emmanuel  573 Jan 26 15:16 0-RSA_public_key.pub
+-rwxr--r-- 1 emmanuel emmanuel  118 Jan 27 04:59 1-for_best_school
+-rwxr--r-- 1 emmanuel emmanuel  140 Jan 26 16:12 2-while_best_school
+-rwxr--r-- 1 emmanuel emmanuel  142 Jan 26 16:04 3-until_best_school
+-rwxr--r-- 1 emmanuel emmanuel  254 Jan 26 16:13 4-if_9_say_hi
+-rwxr--r-- 1 emmanuel emmanuel  369 Jan 26 16:25 5-4_bad_luck_8_is_your_chance
+-rwxr--r-- 1 emmanuel emmanuel  493 Jan 27 04:36 6-superstitious_numbers
+-rwxr--r-- 1 emmanuel emmanuel  411 Jan 27 05:28 7-clock
+-rwxr--r-- 1 emmanuel emmanuel  228 Jan 27 05:34 8-for_ls
+-rw-r--r-- 1 emmanuel emmanuel 2675 Jan 26 15:14 README.md
+-rw-r--r-- 1 emmanuel emmanuel    0 Jan 27 05:34 list
