@@ -17,7 +17,7 @@ do
 	elif [ $i % 3 == 0 ];
 	then
 		echo "Fizz"
-	else
-		echo "$i"
 	fi
+	echo "$i"
+	((i++))
 done
