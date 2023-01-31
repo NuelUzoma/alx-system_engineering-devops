@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# A Bash Script that kills a process without using kill or killall
+term_handler() {
+	echo "I am invisible!!!"
+	exit 0
+}
+
+trap term_handler SIGTERM
+
+PID=$(pgrep -f "7-highlander")
+kill -15 "$PID"
