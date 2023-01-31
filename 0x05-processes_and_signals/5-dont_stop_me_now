@@ -3,5 +3,4 @@
 #+Requirements:
 #+You must use kill
 PID=$(pgrep -f "4-to_infinity_and_beyond")
-kill -TERM $PID
-echo "Terminated"
+kill -TERM "$PID"
