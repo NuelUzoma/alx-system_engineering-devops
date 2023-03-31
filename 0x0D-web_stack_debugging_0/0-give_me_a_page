@@ -6,5 +6,5 @@ docker pull httpd
 FROM httpd:latest
 RUN echo 'Hello Holberton' > /usr/local/apache2htdocs/index.html
 docker build -t my-apache-image .
-docker run -p 8080:80 -d my-apache-image
+docker run -p 8080:80 -d -it my-apache-image
 curl 0:8080
