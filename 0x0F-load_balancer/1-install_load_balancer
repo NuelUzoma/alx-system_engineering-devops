@@ -25,7 +25,7 @@ function install() {
 
 install haproxy #install haproxy
 
-echo -e "\n${blue}Setting up some minor stuff.${reset}\n"
+echo -e "\n${blue}Setting up some minor stuffs.${reset}\n"
 
 # backup default server config file
 sudo cp /etc/haproxy/haproxy.cfg haproxy_default.backup
@@ -56,6 +56,7 @@ echo "$server_config" | sudo dd status=none of=/etc/haproxy/haproxy.cfg
 # enable haproxy to be started by init script
 echo "ENABLED=1" | sudo dd status=none of=/etc/default/haproxy
 
+# start haproxy
 if [ "$(pgrep -c haproxy)" -le 0 ]; then
         sudo service haproxy start
 else
