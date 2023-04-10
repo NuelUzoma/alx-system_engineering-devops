@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Debugging task for Nginx to check if it is listening on port 80
+
+#check if nginx is listening on port 80
+sudo netstat -tulpn | grep :80
+
+# if not, change the default port 8080 to 80
+sudo sed -i "s/8080/80/" /etc/nginx/sites-enabled/default
+
+#check if nginx is running else restart nginx
+if [ "$(pgrep -c nginx)" -le 0 ]; then
+        sudo service nginx start
+else
+        sudo service nginx restart
+fi
