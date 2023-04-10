@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # Debugging task for Nginx to check if it is listening on port 80
 # if not, change the default port 8080 to 80
 sudo sed -i "s/8080/80/" /etc/nginx/sites-enabled/default
