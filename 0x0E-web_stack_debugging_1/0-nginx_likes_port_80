@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 # Debugging task for Nginx to check if it is listening on port 80
+sudo service nginx start
+sudo netstat -tulpn | grep 80
 sudo sed -i 's/listen 8080;/listen 80;/' /etc/nginx/sites-enabled/default
 sudo service nginx restart
