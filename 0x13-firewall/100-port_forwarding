@@ -1,3 +1,12 @@
 #!/usr/bin/env bash
 # Script that redirects port 8080/TCP to port 80/TCP on web-01
+sudo apt update
+sudo apt install ufw
+sudo service ufw status
+sudo ufw allow outgoing
+sudo ufw deny incoming
+sudo ufw allow ssh
+sudo ufw allow http/tcp
+sudo ufw allow https/tcp
 sudo ufw redirect 8080/tcp to 80/tcp
+sudo ufw enable
