@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Script that redirects port 8080/TCP to port 80/TCP on web-01
+sudo ufw redirect 8080/tcp to 80/tcp
