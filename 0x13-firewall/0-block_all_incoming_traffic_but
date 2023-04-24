@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Script that installs the ufw firewall and sets up a few rules on web-01
+sudo apt update
+sudo apt install ufw
+sudo service ufw status
+sudo ufw allow outgoing
+sudo ufw deny incoming
+sudo ufw allow ssh
+sudo ufw allow http/tcp
+sudo ufw allow https/tcp
+sudo ufw enable
