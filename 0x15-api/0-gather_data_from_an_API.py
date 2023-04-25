@@ -38,8 +38,8 @@ if __name__ == "__main__":
     response_1 = requests.get(
         'https://jsonplaceholder.typicode.com/users/{EMPLOYEE_ID}')
     employee = response_1.json()
-    EMPLOYEE_NAME = employee['name']
-    print("Employee {} is done with ({}/{}) tasks:".format(
+    EMPLOYEE_NAME = employee.get('name')
+    print("Employee {} is done with tasks({}/{}):".format(
         EMPLOYEE_NAME, number_of_done_tasks, number_total_tasks))
     for todo in todos:
         if todo['completed']:
