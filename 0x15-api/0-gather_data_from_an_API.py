@@ -28,19 +28,14 @@ if __name__ == "__main__":
     EMPLOYEE_ID = sys.argv[1]
 
     # API Request
-    URL = 'https://jsonplaceholder.typicode.com/users/{EMPLOYEE_ID}/todos/'
-    response = requests.get(URL)
-    todos = response.json()
+    URL = 'https://jsonplaceholder.typicode.com/'
+    user = requests.get(URL + 'users/{}'.format(EMPLOYEE_ID)).json()
+    todos = requests.get(URL + 'todos', params={'userId': EMPLOYEE_ID}).json()
+    completed_tasks = [task.get('title') for task in todos if task.get(
+        'completed') is True]
     # number of completed tasks
-    number_of_done_tasks = sum(1 for todo in todos if todo['completed'])
     number_total_tasks = len(todos)
     # display results
-    response_1 = requests.get(
-        'https://jsonplaceholder.typicode.com/users/{EMPLOYEE_ID}')
-    employee = response_1.json()
-    EMPLOYEE_NAME = employee.get('name')
     print("Employee {} is done with tasks({}/{}):".format(
-        EMPLOYEE_NAME, number_of_done_tasks, number_total_tasks))
-    for todo in todos:
-        if todo['completed']:
-            print("\t {}".format(todo['title']))
+        user.get('name'), len(completed_tasks), number_total_tasks))
+    [print('\t {}'.format(tsk)) for tsk in completed_tasks if True]
