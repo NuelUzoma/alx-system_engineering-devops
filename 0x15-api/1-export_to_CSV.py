@@ -35,16 +35,19 @@ if __name__ == "__main__":
     # write to CSV file
     file_name = "{}.csv".format(EMPLOYEE_ID)
     with open(file_name, 'w', newline='') as csvfile:
-        headers = ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"]
-        writer = csv.DictWriter(csvfile, headers=headers)
+        headers = [
+            "USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"]
+        writer = csv.DictWriter(csvfile, fieldnames=headers)
         writer.writeheader()
         # write each task as a row in csv file
         for task in todos:
             task_title = task.get('title')
-            task_status = 'COMPLETE' if task in completed_tasks else 'INCOMPLETE'
-            writer.writerow({"USER_ID": EMPLOYEE_ID, "USERNAME": user.get('name'),
-             "TASK_COMPLETED_STATUS": task_status, "TASK_TITLE": task_title})
+            task_sts = 'COMPLETE' if task in completed_tasks else 'INCOMPLETE'
+            writer.writerow(
+                {"USER_ID": EMPLOYEE_ID, "USERNAME": user.get('name'),
+                 "TASK_COMPLETED_STATUS": task_sts, "TASK_TITLE": task_title})
     # show results
     print(
         "Employee {} is done with tasks({}/{}). CSV file created: {}".format(
-    user.get('name'), len(completed_tasks), number_total_tasks, file_name))
+            user.get('name'), len(
+                completed_tasks), number_total_tasks, file_name))
