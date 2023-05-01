@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Set the current date
+date=$(date +"%d-%m-%Y")
+
+# Set the MySQL root password
+password=$1
+
+# Set the backup directory
+backup_directory=/path/to/backup/directory
+
+# Create the backup directory if it doesn't exist
+mkdir -p $backup_directory
+
+# Generate the MySQL dump
+mysqldump -u root -p"$password" --all-databases > $backup_directory/backup.sql
+
+# Compress the MySQL dump into a tar.gz archive
+tar -czf $backup_directory/"$date".tar.gz $backup_directory/backup.sql
+
+# Remove the original MySQL dump
+rm $backup_directory/backup.sql
+
+# Print a message indicating the backup was created successfully
+echo "Backup created successfully: $backup_directory/$date.tar.gz"
