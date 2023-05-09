@@ -11,7 +11,7 @@ import requests
 
 def recurse(subreddit, hot_list=[]):
     """The recursive function that will be used to for queries"""
-    url = f"https://www.reddit.com/r/{subreddit}/hot.json"
+    url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     headers = {'User-Agent': 'Mozilla/5.0'}
     params = {}
     try:
